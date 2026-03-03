@@ -52,11 +52,11 @@ The setup process is automated. The architecture (NAT, Hostapd, Nginx, Dnsmasq, 
 User Device (wlan0) -> NAT Router (Pi Firewall) -> Internet (eth0)
 ```
 
-1. Interception: User connects to the "SXSW Free Wifi" open network. Dnsmasq provides an IP and standard DNS (8.8.8.8).
+1. Interception: User connects to the "Fee WIFI" open network. Dnsmasq provides an IP and standard DNS (8.8.8.8).
 2. Captive Portal: NoDogSplash intercepts initial HTTP requests and redirects the user to the local Node.js webapp (http://10.3.141.1).
 3. Interaction: Internet access is restricted until the user sends a chat message or draws on the canvas.
 4. Authorization: User interaction triggers the backend API, which executes: `sudo ndsctl auth [CLIENT_IP]`.
-5. Access Granted: NoDogSplash updates the firewall for the client MAC/IP, enabling full internet pass-through.
+5. Access granted: NoDogSplash updates the firewall for the client MAC/IP, enabling full internet pass-through.
 
 ---
 
@@ -78,9 +78,20 @@ sudo ./admin.sh restart
 
 ## Customization
 
-- Network Name: Modify the SSID variable at the top of setup.sh before execution.
-- Portal Design: Edit HTML/CSS in the webapp/ directory.
-- Backend Logic: Update backend/server.js. Restart services via admin.sh after modification.
+### Changing the WiFi Network Name (SSID)
+The network name is set during the installation process. To change it:
+
+1. Open `setup.sh` in a text editor.
+2. Locate the `SSID` variable at the top of the file:
+   ```bash
+   SSID="Fee WIFI"
+   ```
+3. Change the value between the quotes to your desired network name.
+4. Save the file and run `sudo ./setup.sh` to apply the changes.
+
+### Other Customizations
+- **Portal Design**: Edit the HTML/CSS/JS files within the `webapp/` directory.
+- **Backend Logic**: Modify `backend/server.js`. After changes, execute `sudo ./admin.sh restart` to apply.
 
 ---
 

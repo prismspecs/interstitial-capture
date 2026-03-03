@@ -12,7 +12,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # ================= Configuration =================
-SSID="SXSW Free Wifi"
+SSID="Fee WIFI"
 INTERFACE="wlan0"
 WAN_INTERFACE="eth0"
 PORTAL_IP="10.3.141.1"
