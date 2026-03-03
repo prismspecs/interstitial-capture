@@ -52,7 +52,7 @@ The setup process is automated. The architecture (NAT, Hostapd, Nginx, Dnsmasq, 
 User Device (wlan0) -> NAT Router (Pi Firewall) -> Internet (eth0)
 ```
 
-1. Interception: User connects to the "Free Wifi" open network. Dnsmasq provides an IP and standard DNS (8.8.8.8).
+1. Interception: User connects to the "SXSW Free Wifi" open network. Dnsmasq provides an IP and standard DNS (8.8.8.8).
 2. Captive Portal: NoDogSplash intercepts initial HTTP requests and redirects the user to the local Node.js webapp (http://10.3.141.1).
 3. Interaction: Internet access is restricted until the user sends a chat message or draws on the canvas.
 4. Authorization: User interaction triggers the backend API, which executes: `sudo ndsctl auth [CLIENT_IP]`.
