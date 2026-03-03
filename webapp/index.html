@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome Portal</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="container">
+        <div class="card">
+            <div class="header-area">
+                <img src="assets/hbk.jpg" alt="logo" class="header-logo">
+                <h1>Welcome to the Portal</h1>
+                <p class="subtitle">hacking as practice</p>
+            </div>
+            
+            <div class="content">
+                <!-- Tab Navigation -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="chat">chat</button>
+                    <button class="tab-btn" data-tab="draw">draw</button>
+                </div>
+                
+                <!-- Chat Tab -->
+                <div class="tab-content active" id="chat-tab">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-placeholder">No messages yet. Be the first to say hello!</div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <input 
+                            type="text" 
+                            id="nameInput" 
+                            placeholder="name (optional)" 
+                            maxlength="20"
+                        />
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            placeholder="type message..." 
+                            maxlength="200"
+                        />
+                        <button id="sendBtn" class="btn">send</button>
+                    </div>
+                </div>
+                
+                <!-- Draw Tab -->
+                <div class="tab-content" id="draw-tab">
+                    <div class="draw-controls">
+                        <input type="color" id="colorPicker" value="#00ff00">
+                        <input type="range" id="brushSize" min="1" max="20" value="3">
+                        <button id="clearCanvas" class="btn">clear</button>
+                    </div>
+                    
+                    <canvas id="drawCanvas" width="600" height="400"></canvas>
+                </div>
+                
+                <div class="footer-info">
+                    <p class="timestamp">Connected at: <span id="connectionTime"></span></p>
+                    <p class="small-text">This is a captive portal demonstration running on Raspberry Pi</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="particles" id="particles"></div>
+    
+    <script src="socket.io.min.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
+
