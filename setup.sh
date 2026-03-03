@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================
-# Online Captive Portal Setup (SXSW/Berlin Project)
+# Online Captive Portal Setup
 # Installs and configures Pi as a NAT router with a NoDogSplash portal.
 # ==============================================================
 
@@ -12,7 +12,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # ================= Configuration =================
-SSID="SXSW Free Wifi"
+SSID="Free Wifi"
 INTERFACE="wlan0"
 WAN_INTERFACE="eth0"
 PORTAL_IP="10.3.141.1"
